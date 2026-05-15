@@ -10,7 +10,7 @@
 
     /* Text Colors */
     --text-dark: #1A1A1A;        /* Dark text for light sections */
-    --text-light: #000000;       /* Light text for dark sections */
+    --text-light: #666666;       /* Light text for dark sections (fixed) */
 
     /* Background Colors */
     --bg-light: #F8F5EF;         /* Soft cream background */
@@ -20,6 +20,7 @@
     --shadow: 0 10px 25px rgba(0,0,0,0.08);
     --transition: all 0.3s ease;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -44,7 +45,7 @@ h1, h2, h3, h4, .logo-text {
     padding: 0 24px;
 }
 
-/* Mobile Navigation Drawer */
+/* ===== MOBILE NAVIGATION DRAWER (FIXED) ===== */
 .mobile-drawer {
     position: fixed;
     top: 0;
@@ -53,7 +54,7 @@ h1, h2, h3, h4, .logo-text {
     height: 100vh;
     background: var(--bg-white);
     z-index: 1001;
-    transition: 0.3s ease;
+    transition: left 0.3s ease;
     box-shadow: 2px 0 20px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
@@ -74,7 +75,7 @@ h1, h2, h3, h4, .logo-text {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transition: 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .drawer-overlay.active {
@@ -92,6 +93,7 @@ h1, h2, h3, h4, .logo-text {
 
 .drawer-header img {
     height: 40px;
+    width: auto;
 }
 
 .close-drawer {
@@ -120,6 +122,7 @@ h1, h2, h3, h4, .logo-text {
 .drawer-nav a i {
     width: 30px;
     margin-right: 10px;
+    color: var(--primary);
 }
 
 .drawer-auth {
@@ -147,6 +150,54 @@ h1, h2, h3, h4, .logo-text {
 .drawer-signup {
     background: var(--primary);
     color: white;
+}
+
+/* Alternative - uses margin instead of gap */
+.mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: var(--transition);
+    z-index: 101;
+    position: relative;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    margin: 3px 0;  /* Space between lines using margin */
+}
+
+.mobile-menu-toggle span:nth-child(1) {
+    margin-top: 0;
+}
+
+.mobile-menu-toggle span:nth-child(3) {
+    margin-bottom: 0;
+}
+
+/* Hamburger animation when open */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Main Header */
@@ -177,6 +228,7 @@ h1, h2, h3, h4, .logo-text {
 
 .logo img {
     height: 45px;
+    width: auto;
 }
 
 .logo-text {
@@ -194,22 +246,6 @@ h1, h2, h3, h4, .logo-text {
     display: none;
 }
 
-.mobile-menu-toggle {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.mobile-menu-toggle span {
-    width: 25px;
-    height: 2px;
-    background: var(--text-dark);
-    transition: 0.3s;
-}
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -219,6 +255,7 @@ h1, h2, h3, h4, .logo-text {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    margin-top: 0;
 }
 
 .parallax-section {
@@ -312,6 +349,12 @@ h1, h2, h3, h4, .logo-text {
 .btn-outline {
     border: 2px solid var(--primary);
     color: var(--primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
 }
 
 .hero-scroll-indicator {
@@ -355,6 +398,7 @@ h1, h2, h3, h4, .logo-text {
 
 .quick-link-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .quick-link-card i {
@@ -367,19 +411,92 @@ h1, h2, h3, h4, .logo-text {
     margin-bottom: 8px;
 }
 
-/* Upcoming Event Snippet */
-.upcoming-snippet {
-    padding: 60px 0;
+/* Our Program Section */
+.our-program {
+    padding: 80px 0;
+    background: var(--bg-light);
 }
 
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 20px;
+}
+
+.program-card {
+    text-align: center;
+    padding: 40px 24px;
+    background: var(--bg-white);
+    border-radius: 24px;
+    border: 2px solid var(--primary);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.program-card:hover {
+    border-color: var(--primary-dark);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+}
+
+.program-icon {
+    font-size: 48px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.program-card h3 {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--secondary);
+    margin-bottom: 16px;
+}
+
+.program-time {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 16px 0;
+}
+
+.program-description {
+    color: var(--text-light);
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+.program-location {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+}
+
+.program-location i {
+    margin-right: 6px;
+}
+
+/* Section Header */
 .section-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
 }
 
 .section-header h2 {
-    font-size: 2rem;
-    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Upcoming Event Snippet */
+.upcoming-snippet {
+    padding: 60px 0;
 }
 
 .event-snippet-card {
@@ -468,6 +585,11 @@ h1, h2, h3, h4, .logo-text {
     color: white;
 }
 
+.sermons-cta .btn-outline:hover {
+    background: white;
+    color: var(--primary-dark);
+}
+
 /* Testimonials */
 .testimonials {
     padding: 60px 0;
@@ -494,6 +616,80 @@ h1, h2, h3, h4, .logo-text {
     margin-bottom: 16px;
 }
 
+/* Stats Marquee */
+.tot-stats-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 28px 0;
+    margin: 30px 0;
+}
+
+.stats-track-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.stats-track {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    white-space: nowrap;
+    will-change: transform;
+    width: max-content;
+    animation: scrollStats 25s linear infinite;
+}
+
+@keyframes scrollStats {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.stat-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    border-radius: 60px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+    color: var(--primary);
+}
+
+.stat-number.many {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-dark);
+}
+
+.stat-label i {
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.stats-track-container:hover .stats-track {
+    animation-play-state: paused;
+}
+
 /* Footer */
 .main-footer {
     background: var(--secondary);
@@ -517,12 +713,11 @@ h1, h2, h3, h4, .logo-text {
     display: flex;
     gap: 16px;
     margin-top: 20px;
-    justify-content: center;
 }
 
 .social-links a {
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     transition: var(--transition);
 }
 
@@ -541,12 +736,137 @@ h1, h2, h3, h4, .logo-text {
 .footer-links a {
     color: #ccc;
     text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid #444;
+}
+
+/* Welcome Section */
+.welcome-section {
+    padding: 80px 0 60px;
+    text-align: center;
+}
+
+.welcome-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.welcome-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.covenant-statement {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 20px 0 16px;
+    color: var(--primary);
+}
+
+.prophetic-word {
+    font-size: 1.125rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+/* Scripture Section */
+.scripture-section {
+    padding: 20px 0 50px;
+}
+
+.scripture-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 32px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    background: var(--bg-light);
+}
+
+.scripture-icon-placeholder {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 20px;
+}
+
+.scripture-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.scripture-ref {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+}
+
+/* Statement of Faith Section */
+.statement-faith {
+    padding: 70px 0;
+}
+
+.faith-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 40px;
+    border-radius: 24px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.05);
+    background: var(--bg-white);
+}
+
+.faith-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.faith-subhead {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+}
+
+.faith-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faith-list li {
+    margin-bottom: 20px;
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.faith-list li::before {
+    content: "✓";
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
 }
 
 /* Page Hero */
@@ -559,11 +879,13 @@ h1, h2, h3, h4, .logo-text {
     position: relative;
     color: white;
     margin-top: 80px;
+    background: var(--secondary);
 }
 
 .page-hero-content {
     position: relative;
     z-index: 2;
+    padding: 60px 24px;
 }
 
 .page-hero h1 {
@@ -611,6 +933,7 @@ h1, h2, h3, h4, .logo-text {
     padding: 30px;
     background: white;
     border-radius: 16px;
+    box-shadow: var(--shadow);
 }
 
 .value-icon {
@@ -694,7 +1017,7 @@ h1, h2, h3, h4, .logo-text {
 .year {
     font-weight: 700;
     font-size: 1.2rem;
-    color: var(--accent);
+    color: var(--primary-light);
     margin-right: 20px;
 }
 
@@ -977,6 +1300,10 @@ h1, h2, h3, h4, .logo-text {
     margin-top: 10px;
 }
 
+.btn-auth-submit:hover {
+    background: var(--primary-dark);
+}
+
 .auth-footer {
     text-align: center;
     margin-top: 24px;
@@ -994,7 +1321,7 @@ h1, h2, h3, h4, .logo-text {
     grid-column: 1 / -1;
 }
 
-/* Responsive Design */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (min-width: 768px) {
     .gallery-masonry {
         column-count: 3;
@@ -1006,6 +1333,14 @@ h1, h2, h3, h4, .logo-text {
     
     .event-snippet-card {
         flex-wrap: nowrap;
+    }
+    
+    .program-time {
+        font-size: 2rem;
+    }
+    
+    .program-card h3 {
+        font-size: 1.8rem;
     }
 }
 
@@ -1043,9 +1378,17 @@ h1, h2, h3, h4, .logo-text {
         color: var(--text-dark);
     }
     
+    .btn-auth.login:hover {
+        color: var(--primary);
+    }
+    
     .btn-auth.signup {
         background: var(--primary);
         color: white;
+    }
+    
+    .btn-auth.signup:hover {
+        background: var(--primary-dark);
     }
     
     .mobile-menu-toggle {
@@ -1069,216 +1412,7 @@ h1, h2, h3, h4, .logo-text {
     .gallery-masonry {
         column-count: 2;
     }
-}
-
-
-.welcome-section {
-    padding: 80px 0 60px;
-    text-align: center;
-}
-
-.welcome-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.welcome-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.2;
-}
-
-.covenant-statement {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin: 20px 0 16px;
-}
-
-.prophetic-word {
-    font-size: 1.125rem;
-    font-style: italic;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
-}
-
-.month-block {
-    margin-top: 20px;
-}
-
-.month-block h3 {
-    font-size: 2rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
-
-.feb-image {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.7;
-}
-
-/* Scripture Section */
-.scripture-section {
-    padding: 20px 0 50px;
-}
-
-.scripture-card {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 32px;
-    text-align: center;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-}
-
-.scripture-icon-placeholder {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 20px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.scripture-text {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    font-weight: 500;
-    margin-bottom: 16px;
-}
-
-.scripture-ref {
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-/* Statement of Faith Section */
-.statement-faith {
-    padding: 70px 0;
-}
-
-.faith-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 48px 40px;
-    border-radius: 24px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.05);
-}
-
-.faith-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-.faith-subhead {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 40px;
-    letter-spacing: 0.5px;
-}
-
-.faith-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.faith-list li {
-    margin-bottom: 20px;
-    padding-left: 28px;
-    position: relative;
-    line-height: 1.6;
-}
-
-.faith-list li::before {
-    content: "✓";
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-
-.tot-stats-marquee {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 28px 0;
-    margin: 30px 0;
-}
-
-.stats-track-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.stats-track {
-    display: flex;
-    gap: 60px;
-    align-items: center;
-    white-space: nowrap;
-    will-change: transform;
-    width: max-content;
-}
-
-.stat-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 24px;
-    border-radius: 60px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    backdrop-filter: blur(2px);
-    transition: all 0.2s ease;
-    cursor: default;
-}
-
-.stat-number {
-    font-size: 2rem;
-    font-weight: 800;
-    font-family: 'Playfair Display', serif;
-    line-height: 1;
-}
-
-.stat-number.many {
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-}
-
-.stat-label {
-    font-size: 1rem;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.stat-label i {
-    font-size: 1.1rem;
-}
-
-/* Hover pause - subtle, no colors */
-.stats-track-container:hover .stats-track {
-    animation-play-state: paused;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    
     .welcome-title {
         font-size: 2.5rem;
     }
@@ -1290,14 +1424,6 @@ h1, h2, h3, h4, .logo-text {
     .prophetic-word {
         font-size: 1rem;
         padding: 0 20px;
-    }
-    
-    .month-block h3 {
-        font-size: 1.6rem;
-    }
-    
-    .scripture-text {
-        font-size: 1rem;
     }
     
     .faith-container {
@@ -1332,6 +1458,18 @@ h1, h2, h3, h4, .logo-text {
     .stats-track {
         gap: 30px;
     }
+    
+    .program-time {
+        font-size: 1.5rem;
+    }
+    
+    .program-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .program-card {
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1350,85 +1488,12 @@ h1, h2, h3, h4, .logo-text {
     .stat-item {
         padding: 6px 12px;
     }
+    
+    .logo-text {
+        font-size: 0.9rem;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
 }
-
-
-        /* Additional CSS for Our Program section */
-        .our-program {
-            padding: 80px 0;
-            background: var(--bg-light);
-        }
-        .program-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            margin-top: 20px;
-        }
-        .program-card {
-            text-align: center;
-            padding: 40px 24px;
-            background: var(--bg-white);
-            border-radius: 24px;
-            border: 2px solid var(--primary);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        .program-card:hover {
-            border-color: var(--primary-dark);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-            transform: translateY(-5px);
-        }
-        .program-icon {
-            font-size: 48px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        .program-card h3 {
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-            color: var(--secondary);
-            margin-bottom: 16px;
-        }
-        .program-time {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 16px 0;
-        }
-        .program-time small {
-            font-size: 1rem;
-            font-weight: normal;
-            color: var(--text-light);
-        }
-        .program-description {
-            color: var(--text-light);
-            margin-top: 12px;
-            font-size: 0.95rem;
-        }
-        .program-location {
-            margin-top: 16px;
-            font-size: 0.9rem;
-            color: var(--primary-dark);
-        }
-        .program-location i {
-            margin-right: 6px;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 12px;
-        }
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-        @media (max-width: 768px) {
-            .program-time { font-size: 1.5rem; }
-            .program-card h3 { font-size: 1.4rem; }
-            .program-card { padding: 30px 20px; }
-        }
