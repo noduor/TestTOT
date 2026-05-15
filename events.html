@@ -1,0 +1,152 @@
+<!-- events.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | TOT Church</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <img src="assets/images/totlogo.png" alt="TOT Logo" id="drawerLogo">
+            <button class="close-drawer" id="closeDrawer">&times;</button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-church"></i> About</a>
+            <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+            <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="drawer-auth">
+            <a href="login.html" class="drawer-login"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            <a href="signup.html" class="drawer-signup"><i class="fas fa-user-plus"></i> Sign Up</a>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <img src="assets/images/totlogo.png" alt="TOT Church" id="headerLogo">
+                    <span class="logo-text">Tent of Testimonies</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="events.html" class="active">Events</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                
+                <!-- Desktop Auth Buttons -->
+                <div class="desktop-auth">
+                    <a href="login.html" class="btn-auth login">Sign In</a>
+                    <a href="signup.html" class="btn-auth signup">Sign Up</a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero events-hero parallax-section">
+            <div class="parallax-bg"></div>
+            <div class="page-hero-content">
+                <h1>Church Events</h1>
+                <p>Join us for worship, fellowship, and growth</p>
+            </div>
+        </section>
+
+        <!-- Event Filters  -->
+        <section class="event-filters">
+            <div class="container">
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                    <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Grid -->
+        <section class="events-grid-section">
+            <div class="container">
+                <div class="events-grid" id="eventsGrid">
+                    <!-- Events will be loaded dynamically from PHP backend -->
+                    <div class="loading-spinner"><i class="fas fa-spinner fa-pulse"></i> Loading events...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Modal for Details -->
+        <div class="event-modal" id="eventModal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="modal-body" id="modalBody">
+                    <!-- Dynamic event details and gallery -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="assets/images/totlogo.png" alt="TOT Church">
+                    <p>Tent of Testimonies Ministries International</p>
+
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +254 745 040400</p>
+                    <p><i class="fas fa-envelope"></i> info@tot.church</p>
+                    <p><i class="fas fa-map-marker-alt"></i> TOT Sanctuary</p>
+                </div>
+              <div class="footer-links">   
+                <h4>Socials</h4>    
+                <div class="social-links">
+                    <a href="https://instagram.com/totministries" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy;   2026 Tushiyah Ministries</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!-- admin/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | TOT Church</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <img src="../assets/images/totlogo.png" alt="TOT">
+                <span>Admin Panel</span>
+            </div>
+            <nav class="admin-nav">
+                <a href="#" class="active" data-section="events"><i class="fas fa-calendar-alt"></i> Events</a>
+                <a href="#" data-section="gallery"><i class="fas fa-images"></i> Gallery</a>
+                <a href="#" data-section="announcements"><i class="fas fa-bullhorn"></i> Announcements</a>
+            </nav>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Dashboard</h1>
+                <div class="admin-user">
+                    <span>Super Admin</span>
+                    <a href="../index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </header>
+            
+            <div class="admin-content">
+                <!-- Events Management Section -->
+                <div class="admin-section active" id="eventsSection">
+                    <div class="section-header">
+                        <h2>Manage Events</h2>
+                        <button class="btn-add" id="addEventBtn"><i class="fas fa-plus"></i> Add Event</button>
+                    </div>
+                    
+                    <!-- Add Event Form -->
+                    <div class="add-form" id="addEventForm" style="display:none;">
+                        <h3>Add New Event</h3>
+                        <form id="eventForm">
+                            <input type="text" name="title" placeholder="Event Title" required>
+                            <input type="date" name="date" required>
+                            <input type="time" name="time" required>
+                            <input type="text" name="location" placeholder="Location" required>
+                            <select name="status" required>
+                                <option value="upcoming">Upcoming</option>
+                                <option value="ongoing">Ongoing</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                            <textarea name="description" rows="4" placeholder="Event Description" required></textarea>
+                            <button type="submit" class="btn-save">Save Event</button>
+                            <button type="button" class="btn-cancel" id="cancelEventBtn">Cancel</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Events List -->
+                    <div class="items-list" id="eventsList">
+                        <div class="loading">Loading events...</div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Management Section -->
+                <div class="admin-section" id="gallerySection">
+                    <div class="section-header">
+                        <h2>Manage Gallery</h2>
+                        <button class="btn-add" id="uploadImageBtn"><i class="fas fa-upload"></i> Upload Image</button>
+                    </div>
+                    
+                    <!-- Upload Form -->
+                    <div class="add-form" id="uploadForm" style="display:none;">
+                        <h3>Upload New Image</h3>
+                        <form id="galleryUploadForm" enctype="multipart/form-data">
+                            <select name="category" required>
+                                <option value="worship">Worship</option>
+                                <option value="events">Events</option>
+                                <option value="community">Community</option>
+                                <option value="missions">Missions</option>
+                            </select>
+                            <input type="file" name="image" accept="image/*" required>
+                            <input type="text" name="caption" placeholder="Image Caption">
+                            <button type="submit" class="btn-save">Upload</button>
+                            <button type="button" class="btn-cancel" id="cancelUploadBtn">Cancel</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Gallery Grid -->
+                    <div class="gallery-grid-admin" id="galleryList">
+                        <div class="loading">Loading gallery...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="../js/admin.js"></script>
+</body>
+</html>

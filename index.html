@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Tent of Testimonies International">
+    <title>TOT Church | Tent of Testimonies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <img src="assets/images/totlogo.png" alt="TOT Logo" id="drawerLogo">
+            <button class="close-drawer" id="closeDrawer">&times;</button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-church"></i> About</a>
+            <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+            <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="drawer-auth">
+            <a href="login.html" class="drawer-login"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            <a href="signup.html" class="drawer-signup"><i class="fas fa-user-plus"></i> Sign Up</a>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <img src="assets/images/totlogo.png" alt="TOT Church" id="headerLogo">
+                    <span class="logo-text">Tent of Testimonies</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="events.html">Events</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                
+                <!-- Desktop Auth Buttons -->
+                <div class="desktop-auth">
+                    <a href="login.html" class="btn-auth login">Sign In</a>
+                    <a href="signup.html" class="btn-auth signup">Sign Up</a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Parallax -->
+        <section class="hero parallax-section" id="hero">
+            <div class="parallax-bg"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to <span>Tent of Testimonies</span></h1>
+                <p class="hero-subtitle">Home of Supernatural Divine Solutions</p>
+                <div class="hero-buttons">
+                    <a href="#our-program" class="btn-primary">Join Us This Sunday</a>
+                    <a href="about.html" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span>Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="quick-links">
+            <div class="container">
+                <div class="quick-links-grid">
+                    <a href="events.html" class="quick-link-card">
+                        <i class="fas fa-calendar-week"></i>
+                        <h3>Upcoming Events</h3>
+                        <p>Join our community gatherings</p>
+                    </a>
+                    <a href="#sermons" class="quick-link-card">
+                        <i class="fas fa-video"></i>
+                        <h3>Latest Sermons</h3>
+                        <p>Watch or listen online</p>
+                    </a>
+                    <a href="contact.html" class="quick-link-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Get Involved</h3>
+                        <p>Volunteer & ministries</p>
+                    </a>
+                    <a href="gallery.html" class="quick-link-card">
+                        <i class="fas fa-camera-retro"></i>
+                        <h3>Gallery</h3>
+                        <p>Moments of worship</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Program Section - Replaces Next Gathering -->
+        <section class="our-program" id="our-program">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Program</h2>
+                    <p>Join us for worship, fellowship, and spiritual growth</p>
+                </div>
+                <div class="program-grid">
+                    <!-- Sunday Service -->
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-sun"></i></div>
+                        <h3>Sunday</h3>
+                        <div class="program-time">09:00 AM</div>
+                        <div class="program-description">Sunday Service</div>
+                        <div class="program-location"><i class="fas fa-map-marker-alt"></i> TOT Church Sanctuary</div>
+                    </div>
+                    <!-- Monday Service -->
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-calendar-week"></i></div>
+                        <h3>Monday</h3>
+                        <div class="program-time">5:00 PM</div>
+                        <div class="program-description">House Of Prayer</div>
+                        <div class="program-location"><i class="fas fa-map-marker-alt"></i> TOT Church Sanctuary</div>
+                    </div>
+                    <!-- Wednesday Service -->
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-church"></i></div>
+                        <h3>Wednesday</h3>
+                        <div class="program-time">5:30 PM</div>
+                        <div class="program-description">Wordfest Service</div>
+                        <div class="program-location"><i class="fas fa-map-marker-alt"></i> TOT Church Sanctuary</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sermons CTA -->
+        <section class="sermons-cta parallax-section" id="sermons">
+            <div class="parallax-bg light"></div>
+            <div class="container">
+                <div class="sermons-content">
+                    <h2>Feed Your Spirit</h2>
+                    <p>Access our latest sermons, teachings, and worship experiences</p>
+                    <div class="sermon-buttons">
+                        <a href="#" class="btn-primary">Watch Latest</a>
+                        <a href="#" class="btn-outline">Listen on Podcast</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What People Are Saying</h2>
+                    <p>Lives transformed by God's grace</p>
+                </div>
+                <div class="testimonials-slider">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"This church has become my second home. The warmth and genuine love I've experienced here is unmatched."</p>
+                        <h4>- Sarah M.</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The teachings are deep yet practical. I've grown so much in my faith journey since joining TOT."</p>
+                        <h4>- David K.</h4>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Amazing community! The events are well-organized and spiritually uplifting."</p>
+                        <h4>- Pastor John</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="assets/images/totlogo.png" alt="TOT Church">
+                    <p>Tent of Testimonies Ministries International</p>
+
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +254 745 040400</p>
+                    <p><i class="fas fa-envelope"></i> info@tot.church</p>
+                    <p><i class="fas fa-map-marker-alt"></i> TOT Sanctuary</p>
+                </div>
+              <div class="footer-links">   
+                <h4>Socials</h4>    
+                <div class="social-links">
+                    <a href="https://instagram.com/totministries" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy;   2026 Tushiyah Ministries</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

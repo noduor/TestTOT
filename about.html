@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TOT Church</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <img src="assets/images/totlogo.png" alt="TOT Logo" id="drawerLogo">
+            <button class="close-drawer" id="closeDrawer">&times;</button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-church"></i> About</a>
+            <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+            <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        <div class="drawer-auth">
+            <a href="login.html" class="drawer-login"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            <a href="signup.html" class="drawer-signup"><i class="fas fa-user-plus"></i> Sign Up</a>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <img src="assets/images/totlogo.png" alt="TOT Church" id="headerLogo">
+                    <span class="logo-text">Tent of Testimonies</span>
+                </div>
+                <nav class="desktop-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="events.html">Events</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="desktop-auth">
+                    <a href="login.html" class="btn-auth login">Sign In</a>
+                    <a href="signup.html" class="btn-auth signup">Sign Up</a>
+                </div>
+                <button class="mobile-menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero about-hero parallax-section">
+            <div class="parallax-bg"></div>
+            <div class="page-hero-content">
+                <h1>About TOT Church</h1>
+                <p>Discover our story, mission, and vision for 2026</p>
+            </div>
+        </section>
+
+        <section class="welcome-section">
+            <div class="container">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Welcome to TOT<br>2026</h1>
+                    <p class="covenant-statement">Our covenant year of Fruitfulness and Multiplication</p>
+                    <p class="prophetic-word">You shall see wonders this year and the people shall rejoice at the doings of the Lord in your life in Jesus mighty name</p>
+                    <div class="month-block">
+                        <h3>Month of May</h3>
+                        <div class="feb-image" aria-label="image"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="scripture-section">
+            <div class="container">
+                <div class="scripture-card">
+                    <div class="scripture-icon-placeholder"></div>
+                    <p class="scripture-text">“and they assembled all the congregation together on the first of the second month. Then they registered by ancestry in their families, by their fathers' households, according to the number of names, from twenty years old and upward, head by head”</p>
+                    <p class="scripture-ref">Numbers 1:18</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="statement-faith">
+            <div class="container">
+                <div class="faith-container">
+                    <h2 class="faith-heading">Statement of Faith</h2>
+                    <p class="faith-subhead">This is the TOT Statement of Faith</p>
+                    <div class="faith-list-wrapper">
+                        <ul class="faith-list">
+                            <li>We believe in one God — Father, Son, and Holy Spirit, Creator of all things.</li>
+                            <li>We believe that the Lord Jesus Christ, the first begotten Son of God, was conceived of the Holy Spirit, was born of the Virgin Mary, was crucified and died, was buried and resurrected, ascended into heaven, is now seated at the right hand of God the Father, and is both true God and true man.</li>
+                            <li>We believe the Bible in its entirety to be the inspired Word of God and the infallible rule of faith and conduct. We believe in the resurrection of the dead, the eternal happiness of the saved, and the eternal punishment of the lost.</li>
+                            <li>We believe in personal salvation of believers through the shed blood of Jesus Christ.</li>
+                            <li>We believe in sanctification through the Word of God and by the Holy Spirit, and we believe in personal holiness, purity of heart and life.</li>
+                            <li>We believe in divine healing through faith in the Name of Jesus Christ, and we believe that healing is included in the Redemption.</li>
+                            <li>We believe in water baptism, in the Baptism of the Holy Spirit as distinct from the New Birth, in speaking with tongues as the Spirit of God gives utterance (Acts 2:4), in the gifts of the Spirit, and in the evidence of the fruit of the Spirit.</li>
+                            <li>We believe that all of these are available to believers.</li>
+                            <li>We believe in the Christian's hope: the soon-coming, personal return of the Lord Jesus Christ.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tot-stats-marquee">
+            <div class="stats-track-container">
+                <div class="stats-track" id="statsTrack">
+                    <div class="stat-item"><span class="stat-number">9</span> <span class="stat-label"><i class="fas fa-calendar-alt"></i> years</span></div>
+                    <div class="stat-item"><span class="stat-number">7</span> <span class="stat-label"><i class="fas fa-code-branch"></i> branches</span></div>
+                    <div class="stat-item"><span class="stat-number">3+</span> <span class="stat-label"><i class="fas fa-globe"></i> Countries</span></div>
+                    <div class="stat-item"><span class="stat-number many">Many</span> <span class="stat-label"><i class="fas fa-heart"></i> Souls Saved</span></div>
+                    <div class="stat-item"><span class="stat-number many">Many</span> <span class="stat-label"><i class="fas fa-hands-helping"></i> miracles</span></div>
+                    <div class="stat-item"><span class="stat-number many">Many</span> <span class="stat-label"><i class="fas fa-bible"></i> prophesies</span></div>
+                    <div class="stat-item"><span class="stat-number">9</span> <span class="stat-label"><i class="fas fa-calendar-alt"></i> years</span></div>
+                    <div class="stat-item"><span class="stat-number">7</span> <span class="stat-label"><i class="fas fa-code-branch"></i> branches</span></div>
+                    <div class="stat-item"><span class="stat-number">3+</span> <span class="stat-label"><i class="fas fa-globe"></i> Countries</span></div>
+                    <div class="stat-item"><span class="stat-number many">Many</span> <span class="stat-label"><i class="fas fa-heart"></i> Souls Saved</span></div>
+                    <div class="stat-item"><span class="stat-number many">Many</span> <span class="stat-label"><i class="fas fa-hands-helping"></i> miracles</span></div>
+                    <div class="stat-item"><span class="stat-number many">Many</span> <span class="stat-label"><i class="fas fa-bible"></i> prophesies</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mission-vision">
+            <div class="container">
+                <div class="mv-grid">
+                    <div class="mission-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h2>Our Mission</h2>
+                        <p>To raise a generation of believers who walk in the fullness of God's testimony, impacting their world through faith, love, and the power of the Holy Spirit.</p>
+                    </div>
+                    <div class="vision-card">
+                        <i class="fas fa-eye"></i>
+                        <h2>Our Vision</h2>
+                        <p>A global community where every believer discovers their purpose, lives a life of testimony, and transforms their sphere of influence for God's glory.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="core-values">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Core Values</h2>
+                    <p>What we stand for</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-pray"></i></div>
+                        <h3>Worship</h3>
+                        <p>Authentic, Spirit-led worship that honors God</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3>Community</h3>
+                        <p>Building genuine relationships and supporting one another</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-book-open"></i></div>
+                        <h3>Word</h3>
+                        <p>Uncompromising teaching of Scripture</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-chalkboard-user"></i></div>
+                        <h3>Discipleship</h3>
+                        <p>Equipping believers for Kingdom impact</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="leadership">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Leadership Team</h2>
+                    <p>Meet our dedicated pastors and leaders</p>
+                </div>
+                <div class="leadership-grid">
+                    <div class="leader-card">
+                        <div class="leader-image"><img src="assets/images/placeholder-leader.jpg" alt="Senior Pastor"></div>
+                        <h3>Bishop Doctor Fred Akama</h3>
+                        <p class="leader-title">Bishop</p>
+                        <p class="leader-bio">With over 20 years of ministry experience, Bishop leads with wisdom and prophetic insight.</p>
+                    </div>
+                    <div class="leader-card">
+                        <div class="leader-image"><img src="assets/images/placeholder-leader2.jpg" alt="Associate Pastor"></div>
+                        <h3>Pastor Minayo Akama</h3>
+                        <p class="leader-title">Senior Pastor</p>
+                        <p class="leader-bio">Passionate about the Youth, the Children and the Women's ministries, Pastor Minayo brings life and energy to our services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="assets/images/totlogo.png" alt="TOT Church">
+                    <p>Tent of Testimonies Ministries International</p>
+
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +254 745 040400</p>
+                    <p><i class="fas fa-envelope"></i> info@tot.church</p>
+                    <p><i class="fas fa-map-marker-alt"></i> TOT Sanctuary</p>
+                </div>
+              <div class="footer-links">   
+                <h4>Socials</h4>    
+                <div class="social-links">
+                    <a href="https://instagram.com/totministries" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy;   2026 Tushiyah Ministries</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        (function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileDrawer = document.getElementById('mobileDrawer');
+            const drawerOverlay = document.getElementById('drawerOverlay');
+            const closeDrawerBtn = document.getElementById('closeDrawer');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    mobileDrawer.classList.add('open');
+                    drawerOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            function closeDrawer() {
+                mobileDrawer.classList.remove('open');
+                drawerOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+            if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+            
+            const statsTrack = document.getElementById('statsTrack');
+            if (statsTrack) {
+                let scrollPosition = 0;
+                let animationFrame = null;
+                let speed = 0.6;
+                let trackWidth = 0;
+                let animationActive = true;
+                
+                function getTrackWidth() {
+                    const items = statsTrack.children;
+                    if (!items.length) return 0;
+                    let totalWidth = 0;
+                    const totalItems = items.length;
+                    const originalCount = totalItems / 2;
+                    for (let i = 0; i < originalCount; i++) {
+                        totalWidth += items[i].offsetWidth;
+                    }
+                    const gapValue = 40;
+                    if (originalCount > 0) {
+                        totalWidth += gapValue * (originalCount - 1);
+                    }
+                    return totalWidth;
+                }
+                
+                function updateDimensions() {
+                    trackWidth = getTrackWidth();
+                    if (trackWidth <= 0) {
+                        trackWidth = statsTrack.scrollWidth / 2;
+                    }
+                }
+                
+                function animateMarquee() {
+                    if (!animationActive) return;
+                    scrollPosition -= speed;
+                    if (Math.abs(scrollPosition) >= trackWidth) {
+                        scrollPosition = 0;
+                    }
+                    statsTrack.style.transform = `translateX(${scrollPosition}px)`;
+                    animationFrame = requestAnimationFrame(animateMarquee);
+                }
+                
+                window.addEventListener('load', function() {
+                    updateDimensions();
+                    if (trackWidth > 0) {
+                        animationActive = true;
+                        animateMarquee();
+                    }
+                });
+                window.addEventListener('resize', function() {
+                    updateDimensions();
+                    if (scrollPosition >= trackWidth) scrollPosition = 0;
+                    statsTrack.style.transform = `translateX(${scrollPosition}px)`;
+                });
+                
+                if (document.readyState === 'complete') {
+                    updateDimensions();
+                    if (trackWidth > 0) animateMarquee();
+                } else {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        updateDimensions();
+                        if (trackWidth > 0 && animationActive) animateMarquee();
+                    });
+                }
+                
+                const container = document.querySelector('.stats-track-container');
+                if (container) {
+                    container.addEventListener('mouseenter', function() {
+                        animationActive = false;
+                        if (animationFrame) cancelAnimationFrame(animationFrame);
+                    });
+                    container.addEventListener('mouseleave', function() {
+                        animationActive = true;
+                        animateMarquee();
+                    });
+                }
+            }
+            
+            const imgs = document.querySelectorAll('img[src="assets/images/totlogo.png"], img[src="assets/images/placeholder-leader.jpg"], img[src="assets/images/placeholder-leader2.jpg"]');
+            imgs.forEach(img => {
+                img.addEventListener('error', function() {
+                    if (!this.style.minWidth) {
+                        this.style.minWidth = '50px';
+                        this.style.minHeight = '50px';
+                        this.style.opacity = '0.5';
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
