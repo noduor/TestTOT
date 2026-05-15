@@ -713,11 +713,12 @@ h1, h2, h3, h4, .logo-text {
     display: flex;
     gap: 16px;
     margin-top: 20px;
+    justify-content: center;
 }
 
 .social-links a {
     color: white;
-    font-size: 24px;
+    font-size: 30px;
     transition: var(--transition);
 }
 
